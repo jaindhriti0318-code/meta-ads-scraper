@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 20px;
+    background: #f0f0f0;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: #e0e0e0;
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option-btn {
+    flex: 1;
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.option-btn:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+    color: #667eea;
+}
+
+.option-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.option-content {
+    display: none;
+}
+
+.option-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.brand-checkbox {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-checkbox:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.brand-checkbox input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.progress-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progress-text,
+#cluster-status-text {
+    font-weight: 600;
+    color: #667eea;
+    margin-top: 10px;
+}
+
+#scrape-status {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.file-card {
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.file-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.file-card .file-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.file-card .file-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.file-card .file-date {
+    font-size: 0.85em;
+    color: #999;
+    margin-top: 10px;
+}
+
+.brands-info {
+    background: #f0f4ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.brands-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        min-width: auto;
+    }
+
+    .options {
+        flex-direction: column;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}

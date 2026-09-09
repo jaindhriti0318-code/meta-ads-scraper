@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ads Scraper - Visual Clustering Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚀 Meta Ads Library Scraper</h1>
+            <p>Visual Clustering Analysis for Health & Wellness Brands</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="scrape">📊 Scrape Ads</button>
+                <button class="tab-btn" data-tab="cluster">🎯 Analyze Clusters</button>
+                <button class="tab-btn" data-tab="results">📁 View Results</button>
+                <button class="tab-btn" data-tab="help">❓ Help</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                
+                <!-- Scrape Tab -->
+                <div id="scrape" class="tab-pane active">
+                    <div class="card">
+                        <h2>🔍 Scrape Meta Ads Library</h2>
+                        
+                        <div class="options">
+                            <button class="option-btn" onclick="showOption('url')">📝 Paste URL</button>
+                            <button class="option-btn" onclick="showOption('brands')">🏢 Select Brands</button>
+                        </div>
+
+                        <!-- URL Option -->
+                        <div id="url-option" class="option-content">
+                            <h3>Paste Meta Ads Library URL</h3>
+                            <textarea id="url-input" placeholder="Paste your Meta Ads Library URL here..." rows="4"></textarea>
+                            <button class="btn btn-primary" onclick="scrapeUrl()">Start Scraping</button>
+                        </div>
+
+                        <!-- Brands Option -->
+                        <div id="brands-option" class="option-content" style="display:none;">
+                            <h3>Select Brands to Scrape</h3>
+                            <div id="brands-list" class="brands-grid"></div>
+                            <button class="btn btn-primary" onclick="scrapeBrands()">Scrape Selected Brands</button>
+                        </div>
+
+                        <!-- Progress -->
+                        <div id="scrape-progress" class="progress-section" style="display:none;">
+                            <h3>Scraping Progress</h3>
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill"></div>
+                            </div>
+                            <p id="progress-text"></p>
+                            <div id="scrape-status"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cluster Tab -->
+                <div id="cluster" class="tab-pane">
+                    <div class="card">
+                        <h2>🎯 Visual Clustering Analysis</h2>
+                        
+                        <div class="form-group">
+                            <label>Select Excel file to analyze:</label>
+                            <select id="file-select" class="form-control">
+                                <option value="">Loading files...</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary" onclick="startClustering()">Start Clustering Analysis</button>
+
+                        <!-- Clustering Progress -->
+                        <div id="cluster-progress" class="progress-section" style="display:none;">
+                            <h3>Clustering Progress</h3>
+                            <div class="progress-bar">
+                                <div id="cluster-progress-fill" class="progress-fill"></div>
+                            </div>
+                            <p id="cluster-status-text"></p>
+                        </div>
+
+                        <!-- Clustering Results -->
+                        <div id="cluster-results" class="results-section" style="display:none;">
+                            <h3>✅ Clustering Completed!</h3>
+                            <div id="cluster-summary"></div>
+                            <button class="btn btn-secondary" onclick="downloadFile()">📥 Download Results</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Tab -->
+                <div id="results" class="tab-pane">
+                    <div class="card">
+                        <h2>📁 Recent Results</h2>
+                        
+                        <button class="btn btn-secondary" onclick="loadFiles()">🔄 Refresh</button>
+                        
+                        <div id="files-list" class="files-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Help Tab -->
+                <div id="help" class="tab-pane">
+                    <div class="card">
+                        <h2>❓ Help & Documentation</h2>
+                        
+                        <h3>How to Use</h3>
+                        <ol>
+                            <li><strong>Scrape Ads:</strong> Paste a Meta Ads Library URL or select brands</li>
+                            <li><strong>Analyze:</strong> Run clustering analysis on scraped data</li>
+                            <li><strong>Download:</strong> Get Excel files and reports</li>
+                        </ol>
+
+                        <h3>Finding URLs</h3>
+                        <p>Visit <a href="https://facebook.com/ads/library/" target="_blank">Facebook Ads Library</a> and copy the URL</p>
+
+                        <h3>Output Files</h3>
+                        <ul>
+                            <li><strong>multi_brand_ads_*.xlsx</strong> - All scraped ads</li>
+                            <li><strong>cluster_summary_*.xlsx</strong> - Cluster analysis</li>
+                            <li><strong>cluster_report_*.txt</strong> - Detailed report</li>
+                        </ul>
+
+                        <h3>Pre-configured Brands</h3>
+                        <div class="brands-info">
+                            <p>✅ Kapiva | OZiva | Zandu | Dabur | Himalaya</p>
+                            <p>✅ Patanjali | Wow Skin Science | MuscleBlaze | HealthKart | Mamaearth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
